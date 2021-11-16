@@ -1,0 +1,31 @@
+{
+  "name": "backstage-plugin-extensions",
+  "version": "0.0.1",
+  "description": "Extensions to Cortex Backstage Plugins",
+  "main": "src/index.ts",
+  "repository": "github:cortexapps/backstage-plugin-extensions",
+  "author": "Nikhil Unni <nikhil.unni3000@gmail.com>",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.esm.js",
+    "types": "dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "backstage-cli plugin:build",
+    "lint": "backstage-cli lint",
+    "test": "backstage-cli test",
+    "diff": "backstage-cli plugin:diff",
+    "prepack": "backstage-cli prepack",
+    "postpack": "backstage-cli postpack",
+    "clean": "backstage-cli clean"
+  },
+  "dependencies": {
+    "@backstage/catalog-model": "^0.9.6",
+    "@backstage/core": "^0.7.14"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.8.2",
+    "@cortexapps/eslint-config-oss": "^0.0.1"
+  }
+}

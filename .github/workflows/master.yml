@@ -24,6 +24,6 @@ jobs:
       - run: yarn run tsc
       - run: yarn run lint
       - run: yarn run build
-      - run: yarn test
+      - run: yarn test --pass-with-no-tests
         env:
           CI: true

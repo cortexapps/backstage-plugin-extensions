@@ -16,6 +16,7 @@
 
 export type {
   ExtensionApi,
+  extensionApiRef,
   CortexYaml,
   CustomMapping,
 } from './extensionApi';

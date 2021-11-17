@@ -35,13 +35,13 @@ export type CortexYaml = {
   }[];
   'x-cortex-service-groups': string[];
   'x-cortex-git': {
-    [provider in GitProvider]: {
+    [provider in GitProvider]?: {
       repository: string;
       basePath?: string;
     };
   };
   'x-cortex-oncall': {
-    [provider in OncallProvider]: {
+    [provider in OncallProvider]?: {
       id: string;
       type: string;
     };
@@ -135,7 +135,6 @@ export interface ExtensionApi {
   getAdditionalFilters(): Promise<EntityFilterGroup[]>;
 
   /**
-   *
    * Override default mapping to Cortex YAMLs. Can be used to map custom fields without the need
    * to pollute Backstage descriptors with Cortex fields.
    *

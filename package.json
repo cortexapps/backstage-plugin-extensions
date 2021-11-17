@@ -2,9 +2,8 @@
   "name": "@cortexapps/backstage-plugin-extensions",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extensions to Cortex Backstage Plugins",
-  "main": "src/index.ts",
   "repository": "github:cortexapps/backstage-plugin-extensions",
   "author": "Nikhil Unni <nikhil.unni3000@gmail.com>",
   "license": "Apache-2.0",
@@ -29,5 +28,8 @@
   "devDependencies": {
     "@backstage/cli": "^0.8.2",
     "@cortexapps/eslint-config-oss": "^0.0.1"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

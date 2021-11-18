@@ -15,7 +15,6 @@
  */
 import { EntityFilterGroup } from './filters';
 import { Entity } from '@backstage/catalog-model';
-import { createApiRef } from '@backstage/core';
 
 type CortexSlackOwner = { type: string; channel: string };
 type CortexEmailOwner = { type: string; email: string };
@@ -143,8 +142,3 @@ export interface ExtensionApi {
    */
   getCustomMappings(): Promise<CustomMapping[]>;
 }
-
-export const extensionApiRef = createApiRef<ExtensionApi>({
-  id: 'plugin.cortex.extension',
-  description: 'Used by the Cortex plugin to customize behavior',
-});

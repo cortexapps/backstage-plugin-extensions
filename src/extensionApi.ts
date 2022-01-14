@@ -47,7 +47,7 @@ export type CortexYaml = {
   };
   'x-cortex-owners': CortexOwner[];
   'x-cortex-custom-metadata': {
-    [key: string]: {
+    [key: string]: any | {
       value: any;
       description?: string;
     };

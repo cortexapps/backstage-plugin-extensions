@@ -979,12 +979,12 @@
     to-fast-properties "^2.0.0"
 
 "@backstage/catalog-model@^0.9.6":
-  version "0.9.7"
-  resolved "https://registry.npmjs.org/@backstage/catalog-model/-/catalog-model-0.9.7.tgz#9fa28bc7ef75f1467989b770ddd292285b3c0eca"
-  integrity sha512-VSGLPtM9ORu8rjAubAGQrQtp4b/0ghfTcLcq0qD1Zuk7mZS5N8yc68qvBfukuJ5OyioM7pJ4doNDfzp9461fYw==
+  version "0.9.10"
+  resolved "https://registry.npmjs.org/@backstage/catalog-model/-/catalog-model-0.9.10.tgz#bd5662e1ad7bd7c9604f3f45d055c99b5b2bb87f"
+  integrity sha512-KhCjbZKhS5zZhHiGHmBMq6hDGDshMSZOPGXehtdhr6/oW7Ee5fDcOnhMqreCi1Ebm4RIWJhZcRrxO6X1TTi4TQ==
   dependencies:
-    "@backstage/config" "^0.1.11"
-    "@backstage/errors" "^0.1.4"
+    "@backstage/config" "^0.1.13"
+    "@backstage/errors" "^0.2.0"
     "@backstage/types" "^0.1.1"
     "@types/json-schema" "^7.0.5"
     "@types/yup" "^0.29.13"
@@ -1113,10 +1113,10 @@
     yaml "^1.9.2"
     yup "^0.32.9"
 
-"@backstage/config@^0.1.11":
-  version "0.1.11"
-  resolved "https://registry.npmjs.org/@backstage/config/-/config-0.1.11.tgz#efaace61f02f11e6d0342efc9ef6d72da818ba80"
-  integrity sha512-8Zle4YcIr+vwVTS5pk9+SKOre3OQKTWPufpO9OZ86riFVuB9mKN4lCX9zyarlt2FOd50R25Oc/M7fWcwOQzSPA==
+"@backstage/config@^0.1.11", "@backstage/config@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.npmjs.org/@backstage/config/-/config-0.1.13.tgz#9c3908835aa9e014be31e8bc49f0fb1cbd39d46e"
+  integrity sha512-bB+UkDspGj2cQ1d3cRrPhpSVH3NsAph31/94H+BjAYxtz3XhylsESYXcuc/rtkWtZbSkiRjTEQVobiGt0ZPrNQ==
   dependencies:
     "@backstage/types" "^0.1.1"
     lodash "^4.17.21"
@@ -1125,6 +1125,15 @@
   version "0.1.5"
   resolved "https://registry.npmjs.org/@backstage/errors/-/errors-0.1.5.tgz#94679c2ecd0ea22d0fbfc542c9af3a7fca362411"
   integrity sha512-lL1ZYNfx0j5Y4JsSu5VvLXWAuoNkrCL1FSrTTCKOr+lqPgUhr69r2mfDNjFa+fjotQx6QptAv2QFoacU2ijC3w==
+  dependencies:
+    "@backstage/types" "^0.1.1"
+    cross-fetch "^3.0.6"
+    serialize-error "^8.0.1"
+
+"@backstage/errors@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/@backstage/errors/-/errors-0.2.0.tgz#a432428209fb784a6fd0e09fcc7314e6c72f38d0"
+  integrity sha512-B1pT9qGB2CL9JETZTP+IFGXUl8MBPaeZqm0FdJ2W/W8D5pOZyBojLgmjF18W1YPcQ/m15ZUII1wt4z84E5z2rQ==
   dependencies:
     "@backstage/types" "^0.1.1"
     cross-fetch "^3.0.6"

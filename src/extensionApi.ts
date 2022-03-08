@@ -22,6 +22,7 @@ type CortexGroupOwner = { type: string; name: string };
 type CortexOwner = CortexEmailOwner | CortexGroupOwner | CortexSlackOwner;
 type GitProvider = 'github' | 'gitlab' | 'bitbucket';
 type OncallProvider = 'pagerduty' | 'opsgenie' | 'victorops';
+type DataDogServiceTags = { tag: string; value: string };
 
 export type CortexYaml = {
   title: string;
@@ -72,6 +73,7 @@ export type CortexYaml = {
     };
     datadog: {
       monitors: number[];
+      serviceTags: DataDogServiceTags[];
     };
   };
   'x-cortex-slos': {

@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "@backstage/cli": "^0.15.1",
-    "@cortexapps/eslint-config-oss": "^0.0.1"
+    "@cortexapps/eslint-config-oss": "^0.0.1",
+    "@types/jest": "^27.4.1"
   },
   "files": [
     "dist"

@@ -1,3 +1,5 @@
-module.exports = {
-  extends: [require.resolve('@backstage/cli/config/eslint'), '@cortexapps/eslint-config-oss'],
-};
+module.exports = require('@backstage/cli/config/eslint-factory')(__dirname, {
+  "extends": [
+    "@cortexapps/eslint-config-oss"
+  ]
+});

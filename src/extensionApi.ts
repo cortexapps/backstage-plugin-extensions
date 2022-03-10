@@ -27,64 +27,65 @@ type DataDogServiceTags = { tag: string; value: string };
 export type CortexYaml = {
   title: string;
   description?: string;
-  'x-cortex-link': {
+  'x-cortex-link'?: {
     name: string;
     type: string;
     url: string;
     description?: string;
   }[];
-  'x-cortex-service-groups': string[];
-  'x-cortex-git': {
+  'x-cortex-service-groups'?: string[];
+  'x-cortex-git'?: {
     [provider in GitProvider]?: {
       repository: string;
       basePath?: string;
     };
   };
-  'x-cortex-oncall': {
+  'x-cortex-oncall'?: {
     [provider in OncallProvider]?: {
       id: string;
       type: string;
     };
   };
-  'x-cortex-owners': CortexOwner[];
-  'x-cortex-custom-metadata': {
+  'x-cortex-owners'?: CortexOwner[];
+  'x-cortex-custom-metadata'?: {
     [key: string]: any | {
       value: any;
       description?: string;
     };
   };
-  'x-cortex-k8s': {
-    deployment: {
+  'x-cortex-k8s'?: {
+    deployment?: {
       identifier: string;
       cluster?: string;
     }[];
   };
-  'x-cortex-infra': {
-    aws: {
-      ecs: {
+  'x-cortex-infra'?: {
+    aws?: {
+      ecs?: {
         clusterArn: string;
         serviceArn: string;
       };
     };
   };
-  'x-cortex-apm': {
-    newrelic: {
+  'x-cortex-apm'?: {
+    newrelic?: {
       applicationId: string;
     };
-    datadog: {
-      monitors: number[];
-      serviceTags: DataDogServiceTags[];
+    datadog?: {
+      monitors?: number[];
+      serviceTags?: DataDogServiceTags[];
+      serviceName?: string;
     };
   };
-  'x-cortex-slos': {
-    signalfx: {
+  'x-cortex-slos'?: {
+    signalfx?: {
       query: string;
       rollup: string;
       target: string;
       lookback: string;
       operation: string;
     }[];
-    lightstep: {
+    lightstep?: {
       streamId: string;
       targets: {
         latency: {
@@ -94,37 +95,37 @@ export type CortexYaml = {
         }[];
       };
     }[];
-    datadog: {
+    datadog?: {
       id: string;
     }[];
   };
-  'x-cortex-issues': {
-    jira: {
+  'x-cortex-issues'?: {
+    jira?: {
       labels: string[];
     };
   };
-  'x-cortex-sentry': {
+  'x-cortex-sentry'?: {
     project: string;
   };
-  'x-cortex-bugsnag': {
+  'x-cortex-bugsnag'?: {
     project: string;
   };
-  'x-cortex-static-analysis': {
-    sonarqube: {
+  'x-cortex-static-analysis'?: {
+    sonarqube?: {
       project: string;
     };
   };
-  'x-cortex-snyk': {
-    projects: {
+  'x-cortex-snyk'?: {
+    projects?: {
       organizationId: string;
       projectId: string;
-    };
+    }[];
   };
-  'x-cortex-alerts': {
+  'x-cortex-alerts'?: {
     type: string;
     tag: string;
     value: string;
-  };
+  }[];
 };
 
 export type CustomMapping = (entity: Entity) => Partial<CortexYaml>;

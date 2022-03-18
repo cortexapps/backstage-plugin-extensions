@@ -1250,14 +1250,14 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@backstage/catalog-model@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.npmjs.org/@backstage/catalog-model/-/catalog-model-0.13.0.tgz#abeb91522ac7ef7907907ad5bc889803131db209"
-  integrity sha512-Q+0C0LJ8niNQ4TXduUNTycZ2PLMbhKmfgWywunJLO34DZAoFnTWJEAdEYF536YyLciHhLO0dHRUaHY29Sdr+Xg==
+"@backstage/catalog-model@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@backstage/catalog-model/-/catalog-model-1.0.0.tgz#0aa8694a3182aaf4232725842da751bf5f78bd68"
+  integrity sha512-hjvTzs+P1/TG42FhX6jJvRIBbYZJC0vE9Qqn9MTb4n8vaoZuBT5jYTnK6K80gpEyNfbznpD5vsE8ss5lmzWz+Q==
   dependencies:
-    "@backstage/config" "^0.1.15"
-    "@backstage/errors" "^0.2.2"
-    "@backstage/types" "^0.1.3"
+    "@backstage/config" "^1.0.0"
+    "@backstage/errors" "^1.0.0"
+    "@backstage/types" "^1.0.0"
     ajv "^7.0.3"
     json-schema "^0.4.0"
     lodash "^4.17.21"
@@ -1268,17 +1268,17 @@
   resolved "https://registry.npmjs.org/@backstage/cli-common/-/cli-common-0.1.8.tgz#a20777b0448cada100b3967592925dc15fa25be5"
   integrity sha512-OSFUhEaPMbdGvB130GRlJ+tZvvIRYGZK10sIcOGuXg3cl/K+sVAWh1XuewBLa+YI6wspAsReNiMR/+YbH8q2/A==
 
-"@backstage/cli@^0.15.3":
-  version "0.15.3"
-  resolved "https://registry.npmjs.org/@backstage/cli/-/cli-0.15.3.tgz#bf10398c203f7e7010c153031826b5daaee78669"
-  integrity sha512-4PNJxGqAhWAKtVHUugj8RImHdi0PP7eFsZac4IKVosXXYHWhlJ830zsBz+KVW81L09GXAdi3fOthB9oxoLsWSA==
+"@backstage/cli@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.npmjs.org/@backstage/cli/-/cli-0.16.0.tgz#e2df112635abc413c20ffc9764ffab299570828f"
+  integrity sha512-CwpYLjNimrbLC5cG3KFqhsZ2umT91427rL92gI2SQ5pig0ATjPPl5De4jd1k6o4+yp0n3afKGOq5Jz1eXGKnBg==
   dependencies:
     "@backstage/cli-common" "^0.1.8"
-    "@backstage/config" "^0.1.15"
-    "@backstage/config-loader" "^0.9.7"
-    "@backstage/errors" "^0.2.2"
+    "@backstage/config" "^1.0.0"
+    "@backstage/config-loader" "^1.0.0"
+    "@backstage/errors" "^1.0.0"
     "@backstage/release-manifests" "^0.0.2"
-    "@backstage/types" "^0.1.3"
+    "@backstage/types" "^1.0.0"
     "@hot-loader/react-dom-v16" "npm:@hot-loader/react-dom@^16.0.2"
     "@hot-loader/react-dom-v17" "npm:@hot-loader/react-dom@^17.0.2"
     "@manypkg/get-packages" "^1.1.3"
@@ -1362,15 +1362,15 @@
     yn "^4.0.0"
     zod "^3.11.6"
 
-"@backstage/config-loader@^0.9.7":
-  version "0.9.7"
-  resolved "https://registry.npmjs.org/@backstage/config-loader/-/config-loader-0.9.7.tgz#b056f592b8ec1b21007eb9193ec595a9da3fb1b9"
-  integrity sha512-dt+z5MSRG4qGYPsmlxZioEpXpf4/6R6wD7NJodcV5JbXd109sPALwwxMG4KLDuBvhJnKlJmOK1ZhQGe/11jHjA==
+"@backstage/config-loader@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@backstage/config-loader/-/config-loader-1.0.0.tgz#cb4ffed427149e787ed9a5d694b5c3c49c8e31bb"
+  integrity sha512-gSC3hE+7oxXwWasuEBUOkX48ka84aZ8tQBUieU4NsP0R/b7YRspiE0bcynxsi9wzhwo2/waGy39iPnCqZRD6bg==
   dependencies:
     "@backstage/cli-common" "^0.1.8"
-    "@backstage/config" "^0.1.15"
-    "@backstage/errors" "^0.2.2"
-    "@backstage/types" "^0.1.3"
+    "@backstage/config" "^1.0.0"
+    "@backstage/errors" "^1.0.0"
+    "@backstage/types" "^1.0.0"
     "@types/json-schema" "^7.0.6"
     ajv "^7.0.3"
     chokidar "^3.5.2"
@@ -1379,24 +1379,24 @@
     json-schema-merge-allof "^0.8.1"
     json-schema-traverse "^1.0.0"
     node-fetch "^2.6.7"
-    typescript-json-schema "^0.52.0"
+    typescript-json-schema "^0.53.0"
     yaml "^1.9.2"
     yup "^0.32.9"
 
-"@backstage/config@^0.1.15":
-  version "0.1.15"
-  resolved "https://registry.npmjs.org/@backstage/config/-/config-0.1.15.tgz#4bad122ad861be5bd61a60639f92d2494fa245c5"
-  integrity sha512-eNJEYYSEu9MkrkBYiMpUBWEc3Bu64YgB9pZZGCMW7/9350tV2wbylEdoBJHslilJlJhiUyTXBckn8Ua7DOH7rw==
+"@backstage/config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@backstage/config/-/config-1.0.0.tgz#7af40758ae3f8e1d9ef3a07f063a1fd9cf5c364e"
+  integrity sha512-0M8UPHjCev3i/Puz/DGV7hor/vujx27bpWip5UTjachzBorI5xB0CBV1GfZ1UZMm5R5py7RJ+lKdmSJVFdw9IA==
   dependencies:
-    "@backstage/types" "^0.1.3"
+    "@backstage/types" "^1.0.0"
     lodash "^4.17.21"
 
-"@backstage/errors@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.npmjs.org/@backstage/errors/-/errors-0.2.2.tgz#2113e0bc859e645b8b59bfcb435f7535739b02f8"
-  integrity sha512-s6Ru3NL4oFiHwNsMY1uiwqNKuOu9KQWkpse3adWZsDu1fCQKOw2omQ2qBHZ4Uj1xJ6x9Ye0yNTJ4vfHfdwiaEg==
+"@backstage/errors@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@backstage/errors/-/errors-1.0.0.tgz#08ebf53afdeaca32362955ea8551e8ffa0bb3cd7"
+  integrity sha512-2SpjdhH9ZOQ4RGEeu3/A7ARkl/1E9E6uBGQZ2DZOU4azTK1UZG/HE1KBMOThp3jL/8is2vOIJZLBA3r3DxLfVw==
   dependencies:
-    "@backstage/types" "^0.1.3"
+    "@backstage/types" "^1.0.0"
     cross-fetch "^3.1.5"
     serialize-error "^8.0.1"
 
@@ -1407,10 +1407,10 @@
   dependencies:
     cross-fetch "^3.1.5"
 
-"@backstage/types@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/@backstage/types/-/types-0.1.3.tgz#6613d8cbdf97d42d31cd1e66a833df533e7ccf14"
-  integrity sha512-fJVi4oVrlO+G3PRv1fYSll9/X4pE11HLnkI//Geare9sP6wSfp/2zXpLYfKVsG0e24jOl7Swkc8lwLkQ90zMaQ==
+"@backstage/types@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@backstage/types/-/types-1.0.0.tgz#3c4cc1487d30d113250fc530238aae0a2ba0e58c"
+  integrity sha512-x5650F/lXUO1Bo++Eg1T9vreuIzlOeljxTUCP6mxqOGgOWr8yBku42HiHX6KE80OpckFDTUyKtEWqboclfKUkg==
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
@@ -10046,23 +10046,23 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript-json-schema@^0.52.0:
-  version "0.52.0"
-  resolved "https://registry.npmjs.org/typescript-json-schema/-/typescript-json-schema-0.52.0.tgz#954560ec90e5486e8f7a5b7706ec59286a708e29"
-  integrity sha512-3ZdHzx116gZ+D9LmMl5/+d1G3Rpt8baWngKzepYWHnXbAa8Winv64CmFRqLlMKneE1c40yugYDFcWdyX1FjGzQ==
+typescript-json-schema@^0.53.0:
+  version "0.53.0"
+  resolved "https://registry.npmjs.org/typescript-json-schema/-/typescript-json-schema-0.53.0.tgz#ac5b89e4b0af55be422f475a041360e0556f88ea"
+  integrity sha512-BcFxC9nipQQOXxrBGI/jOWU31BwzVh6vqJR008G8VHKJtQ8YrZX6veriXfTK1l+L0/ff0yKl3mZigMLA6ZqkHg==
   dependencies:
     "@types/json-schema" "^7.0.9"
     "@types/node" "^16.9.2"
     glob "^7.1.7"
     safe-stable-stringify "^2.2.0"
     ts-node "^10.2.1"
-    typescript "~4.4.4"
+    typescript "~4.5.0"
     yargs "^17.1.1"
 
-typescript@~4.4.4:
-  version "4.4.4"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
+typescript@~4.5.0:
+  version "4.5.5"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 uglify-js@^3.1.4:
   version "3.14.3"

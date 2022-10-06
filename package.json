@@ -2,7 +2,7 @@
   "name": "@cortexapps/backstage-plugin-extensions",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Extensions to Cortex Backstage Plugins",
   "repository": "github:cortexapps/backstage-plugin-extensions",
   "author": "Nikhil Unni <nikhil.unni3000@gmail.com>",

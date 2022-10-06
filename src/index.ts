@@ -18,5 +18,6 @@ export type {
   ExtensionApi,
   CortexYaml,
   CustomMapping,
+  TeamOverrides,
 } from './extensionApi';
 export type { EntityFilterGroup } from './filters';

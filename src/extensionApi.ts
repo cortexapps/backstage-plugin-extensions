@@ -130,11 +130,46 @@ export type CortexYaml = {
 
 export type CustomMapping = (entity: Entity) => Partial<CortexYaml>;
 
+interface EmailMember {
+  name: string;
+  email: string;
+  description?: string;
+}
+
+interface Team {
+  teamTag: string;
+  name: string;
+  shortDescription?: string;
+  fullDescription?: string;
+  links?: {
+    name: string;
+    type: string;
+    url: string;
+    description?: string;
+  }[];
+  slackChannels?: {
+    name: string;
+    notificationsEnabled: boolean;
+  }[];
+  emailMembers?: EmailMember[];
+  additionalMembers?: EmailMember[];
+}
+
+interface Relationship {
+  parentTeamTag: string;
+  childTeamTag: string;
+}
+
+export interface TeamOverrides {
+  teams: Team[];
+  relationships: Relationship[];
+}
+
 export interface ExtensionApi {
   /**
    * Additional filters on Entities for scorecards and initiatives
    */
-  getAdditionalFilters(): Promise<EntityFilterGroup[]>;
+  getAdditionalFilters?(): Promise<EntityFilterGroup[]>;
 
   /**
    * Override default mapping to Cortex YAMLs. Can be used to map custom fields without the need
@@ -143,5 +178,11 @@ export interface ExtensionApi {
    * List of Cortex annotations can be found here: https://docs.getcortexapp.com/service-descriptor/
    *
    */
-  getCustomMappings(): Promise<CustomMapping[]>;
+  getCustomMappings?(): Promise<CustomMapping[]>;
+
+  /**
+   * Override default teams and team hierarchies in Cortex.
+   * Can be used to fine tune where team information should come from, as well as particular team metadata.
+   */
+  getTeamOverrides?(entities: Entity[]): Promise<TeamOverrides>;
 }

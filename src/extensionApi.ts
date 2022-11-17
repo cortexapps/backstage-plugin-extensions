@@ -20,7 +20,6 @@ type CortexSlackOwner = { type: string; channel: string };
 type CortexEmailOwner = { type: string; email: string };
 type CortexGroupOwner = { type: string; name: string };
 type CortexOwner = CortexEmailOwner | CortexGroupOwner | CortexSlackOwner;
-type GitProvider = 'github' | 'gitlab' | 'bitbucket';
 type OncallProvider = 'pagerduty' | 'opsgenie' | 'victorops';
 type DataDogServiceTags = { tag: string; value: string };
 
@@ -35,8 +34,20 @@ export type CortexYaml = {
   }[];
   'x-cortex-service-groups'?: string[];
   'x-cortex-git'?: {
-    [provider in GitProvider]?: {
+    github?: {
       repository: string;
+      basePath?: string;
+    };
+    gitlab?: {
+      repository: string;
+      basePath?: string;
+    };
+    bitbucket?: {
+      repository: string;
+    };
+    azure?: {
+      project: string;
+      repository : string;
       basePath?: string;
     };
   };

@@ -16,9 +16,9 @@
 import { EntityFilterGroup } from './filters';
 import { Entity } from '@backstage/catalog-model';
 
-type CortexSlackOwner = { type: string; channel: string };
-type CortexEmailOwner = { type: string; email: string };
-type CortexGroupOwner = { type: string; name: string };
+type CortexSlackOwner = { type: string; channel: string; notificationsEnabled?: boolean; description?: string; };
+type CortexEmailOwner = { type: string; email: string; description?: string; };
+type CortexGroupOwner = { type: string; name: string; provider?: string; description?: string; };
 type CortexOwner = CortexEmailOwner | CortexGroupOwner | CortexSlackOwner;
 type GitProvider = 'github' | 'gitlab' | 'bitbucket';
 type OncallProvider = 'pagerduty' | 'opsgenie' | 'victorops';

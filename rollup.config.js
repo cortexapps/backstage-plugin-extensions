@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* eslint-disable import/no-extraneous-dependencies */
-import resolve from '@rollup/plugin-node-resolve';
-import esbuild from 'rollup-plugin-esbuild';
+import resolve from '@backstage/cli/@rollup/plugin-node-resolve';
+import esbuild from '@backstage/cli/rollup-plugin-esbuild';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import commonjs from '@rollup/plugin-commonjs';
-import dts from 'rollup-plugin-dts';
+import commonjs from '@backstage/cli/@rollup/plugin-commonjs';
+import dts from '@backstage/cli/rollup-plugin-dts';
 
 export default [{
   input: 'src/index.ts',

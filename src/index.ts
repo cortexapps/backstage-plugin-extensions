@@ -15,9 +15,13 @@
  */
 
 export type {
-  ExtensionApi,
   CortexYaml,
   CustomMapping,
+  ExtensionApi,
+  Rule,
+  Scorecard,
+  ServiceGroup,
   TeamOverrides,
+  UiExtensions,
 } from './extensionApi';
 export type { EntityFilterGroup } from './filters';

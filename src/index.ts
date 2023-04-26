@@ -20,7 +20,7 @@ export type {
   ExtensionApi,
   Rule,
   Scorecard,
-  ServiceGroup,
+  Group,
   TeamOverrides,
   UiExtensions,
 } from './extensionApi';

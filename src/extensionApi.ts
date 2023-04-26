@@ -186,7 +186,7 @@ export interface Rule {
   weight: number;
 }
 
-export interface ServiceGroup {
+export interface Group {
   id: string;
   tag: string;
 }
@@ -200,8 +200,8 @@ export interface Scorecard {
   name: string;
   description?: string;
   rules: Rule[];
-  tags: ServiceGroup[];
-  excludedTags: ServiceGroup[];
+  tags: Group[];
+  excludedTags: Group[];
   filterQuery?: string;
   nextUpdated?: string;
 }

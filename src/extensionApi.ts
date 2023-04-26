@@ -176,11 +176,57 @@ export interface TeamOverrides {
   relationships: Relationship[];
 }
 
+export interface Rule {
+  id: number;
+  expression: string;
+  title?: string;
+  description?: string;
+  failureMessage?: string;
+  dateCreated?: string;
+  weight: number;
+}
+
+export interface Group {
+  id: string;
+  tag: string;
+}
+
+export interface Scorecard {
+  creator: {
+    name: string;
+    email: string;
+  };
+  id: number;
+  name: string;
+  description?: string;
+  rules: Rule[];
+  tags: Group[];
+  excludedTags: Group[];
+  filterQuery?: string;
+  nextUpdated?: string;
+}
+
+export interface UiExtensions {
+  scorecards?: {
+    /**
+     * Override default sort order of Scorecards in both the global and entity list view of Scorecards.
+     */
+    sortOrder?: {
+      compareFn: (a: Scorecard, b: Scorecard) => number;
+    }
+  }
+}
+
 export interface ExtensionApi {
   /**
    * Additional filters on Entities for scorecards and initiatives
    */
   getAdditionalFilters?(): Promise<EntityFilterGroup[]>;
+
+  /**
+   * Override default UI for @cortexapps/backstage-plugin
+   */
+  getUiExtensions?(): Promise<UiExtensions>;
 
   /**
    * Override default mapping to Cortex YAMLs. Can be used to map custom fields without the need

@@ -214,14 +214,14 @@ export interface UiExtensions {
     sortOrder?: {
       compareFn: (a: Scorecard, b: Scorecard) => number;
     }
-  },
+  };
 
   /**
    * Add quick links to an optional help page.
    */
   helpPage?: {
     links?: [{ name: string; url: string; description?: string; }];
-  }
+  };
 }
 
 export interface ExtensionApi {

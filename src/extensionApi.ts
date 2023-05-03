@@ -206,6 +206,16 @@ export interface Scorecard {
   nextUpdated?: string;
 }
 
+export interface HelpPageLink {
+  name: string;
+  url: string;
+  description?: string;
+}
+
+export interface HelpPageDisplayOptions {
+  links?: HelpPageLink[];
+}
+
 export interface UiExtensions {
   scorecards?: {
     /**
@@ -219,9 +229,7 @@ export interface UiExtensions {
   /**
    * Add quick links to an optional help page.
    */
-  helpPage?: {
-    links?: [{ name: string; url: string; description?: string; }];
-  };
+  helpPage?: HelpPageDisplayOptions;
 }
 
 export interface ExtensionApi {

@@ -32,7 +32,7 @@ export type CortexYaml = {
     url: string;
     description?: string;
   }[];
-  'x-cortex-groups'?: string[];
+  'x-cortex-service-groups'?: string[];
   'x-cortex-git'?: {
     github?: {
       repository: string;

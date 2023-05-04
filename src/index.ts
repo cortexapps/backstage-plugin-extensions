@@ -22,6 +22,8 @@ export type {
   Scorecard,
   Group,
   TeamOverrides,
+  HelpPageDisplayOptions,
+  HelpPageLink,
   UiExtensions,
 } from './extensionApi';
 export type { EntityFilterGroup } from './filters';

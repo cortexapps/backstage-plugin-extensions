@@ -206,7 +206,15 @@ export interface Scorecard {
   nextUpdated?: string;
 }
 
-export type Color = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+export interface HelpPageLink {
+  name: string;
+  url: string;
+  description?: string;
+}
+
+export interface HelpPageDisplayOptions {
+  links?: HelpPageLink[];
+}
 
 export interface UiExtensions {
   scorecards?: {
@@ -224,6 +232,11 @@ export interface UiExtensions {
       getBadgesFn?: (scorecard: Scorecard) => string[];
     }
   }
+
+  /**
+   * Add quick links to an optional help page.
+   */
+  helpPage?: HelpPageDisplayOptions;
 }
 
 export interface ExtensionApi {

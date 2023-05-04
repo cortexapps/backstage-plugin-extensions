@@ -32,7 +32,7 @@ export type CortexYaml = {
     url: string;
     description?: string;
   }[];
-  'x-cortex-service-groups'?: string[];
+  'x-cortex-groups'?: string[];
   'x-cortex-git'?: {
     github?: {
       repository: string;
@@ -206,6 +206,8 @@ export interface Scorecard {
   nextUpdated?: string;
 }
 
+export type Color = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+
 export interface UiExtensions {
   scorecards?: {
     /**
@@ -213,6 +215,13 @@ export interface UiExtensions {
      */
     sortOrder?: {
       compareFn: (a: Scorecard, b: Scorecard) => number;
+    }
+
+    /**
+     * Add badges to the list view of Scorecards.
+     */
+    cardDisplayOptions?: {
+      getBadgesFn?: (scorecard: Scorecard) => string[];
     }
   }
 }

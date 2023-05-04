@@ -224,7 +224,14 @@ export interface UiExtensions {
     sortOrder?: {
       compareFn: (a: Scorecard, b: Scorecard) => number;
     }
-  };
+
+    /**
+     * Add badges to the list view of Scorecards.
+     */
+    cardDisplayOptions?: {
+      getBadgesFn?: (scorecard: Scorecard) => string[];
+    }
+  }
 
   /**
    * Add quick links to an optional help page.

@@ -274,16 +274,16 @@ export interface ExtensionApi {
   getCustomMappings?(): Promise<CustomMapping[]>;
 
   /**
-   * Override default teams and team hierarchies in Cortex.
-   * Can be used to fine tune where team information should come from, as well as particular team metadata.
-   */
-  getTeamOverrides?(entities: Entity[]): Promise<TeamOverrides>;
-
-  /**
    * Optional entity filter for syncs between Backstage and Cortex.
    *
    * By default, Backstage will send every entity manifest to Cortex,
    * but this allows users to limit which entities are sent over.
    */
-  getEntityFilter?(): Promise<EntityFilter>;
+  getSyncEntityFilter?(): Promise<EntityFilter>;
+
+  /**
+   * Override default teams and team hierarchies in Cortex.
+   * Can be used to fine tune where team information should come from, as well as particular team metadata.
+   */
+  getTeamOverrides?(entities: Entity[]): Promise<TeamOverrides>;
 }

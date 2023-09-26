@@ -212,6 +212,20 @@ export interface HelpPageLink {
   description?: string;
 }
 
+export interface EntityFilter {
+  /**
+   * Limits entity kinds that are queried.
+   * Can be used to reduce total number of entities that are in loaded in memory
+   * before pushing to Cortex
+   */
+  kinds?: string[];
+  /**
+   * On top of the kinds filter, can be used to filter on a per-entity basis after all
+   * entities to potentially send have been loaded in memory.
+   */
+  entityFilter?: (entity: Entity) => boolean;
+}
+
 export interface HelpPageDisplayOptions {
   links?: HelpPageLink[];
 }
@@ -264,4 +278,12 @@ export interface ExtensionApi {
    * Can be used to fine tune where team information should come from, as well as particular team metadata.
    */
   getTeamOverrides?(entities: Entity[]): Promise<TeamOverrides>;
+
+  /**
+   * Optional entity filter for syncs between Backstage and Cortex.
+   *
+   * By default, Backstage will send every entity manifest to Cortex,
+   * but this allows users to limit which entities are sent over.
+   */
+  getEntityFilter?(): Promise<EntityFilter>;
 }

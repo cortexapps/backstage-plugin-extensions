@@ -17,6 +17,7 @@
 export type {
   CortexYaml,
   CustomMapping,
+  EntityFilter,
   ExtensionApi,
   Rule,
   Scorecard,

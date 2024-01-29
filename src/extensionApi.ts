@@ -13,27 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { EntityFilterGroup } from './filters';
-import { Entity } from '@backstage/catalog-model';
+import { EntityFilterGroup } from "./filters";
+import { Entity } from "@backstage/catalog-model";
 
-type CortexSlackOwner = { type: string; channel: string; notificationsEnabled?: boolean; description?: string; };
-type CortexEmailOwner = { type: string; email: string; description?: string; };
-type CortexGroupOwner = { type: string; name: string; provider?: string; description?: string; };
+type CortexSlackOwner = {
+  type: string;
+  channel: string;
+  notificationsEnabled?: boolean;
+  description?: string;
+};
+type CortexEmailOwner = { type: string; email: string; description?: string };
+type CortexGroupOwner = {
+  type: string;
+  name: string;
+  provider?: string;
+  description?: string;
+};
 type CortexOwner = CortexEmailOwner | CortexGroupOwner | CortexSlackOwner;
-type OncallProvider = 'pagerduty' | 'opsgenie' | 'victorops';
+type OncallProvider = "pagerduty" | "opsgenie" | "victorops";
 type DataDogServiceTags = { tag: string; value: string };
 
 export type CortexYaml = {
   title: string;
   description?: string;
-  'x-cortex-link'?: {
+  "x-cortex-link"?: {
     name: string;
     type: string;
     url: string;
     description?: string;
   }[];
-  'x-cortex-service-groups'?: string[];
-  'x-cortex-git'?: {
+  "x-cortex-service-groups"?: string[];
+  "x-cortex-git"?: {
     github?: {
       repository: string;
       basePath?: string;
@@ -47,30 +57,32 @@ export type CortexYaml = {
     };
     azure?: {
       project: string;
-      repository : string;
+      repository: string;
       basePath?: string;
     };
   };
-  'x-cortex-oncall'?: {
+  "x-cortex-oncall"?: {
     [provider in OncallProvider]?: {
       id: string;
       type: string;
     };
   };
-  'x-cortex-owners'?: CortexOwner[];
-  'x-cortex-custom-metadata'?: {
-    [key: string]: any | {
-      value: any;
-      description?: string;
-    };
+  "x-cortex-owners"?: CortexOwner[];
+  "x-cortex-custom-metadata"?: {
+    [key: string]:
+      | any
+      | {
+          value: any;
+          description?: string;
+        };
   };
-  'x-cortex-k8s'?: {
+  "x-cortex-k8s"?: {
     deployment?: {
       identifier: string;
       cluster?: string;
     }[];
   };
-  'x-cortex-infra'?: {
+  "x-cortex-infra"?: {
     aws?: {
       ecs?: {
         clusterArn: string;
@@ -78,7 +90,7 @@ export type CortexYaml = {
       };
     };
   };
-  'x-cortex-apm'?: {
+  "x-cortex-apm"?: {
     newrelic?: {
       applicationId: string;
     };
@@ -88,7 +100,7 @@ export type CortexYaml = {
       serviceName?: string;
     };
   };
-  'x-cortex-slos'?: {
+  "x-cortex-slos"?: {
     signalfx?: {
       query: string;
       rollup: string;
@@ -110,29 +122,29 @@ export type CortexYaml = {
       id: string;
     }[];
   };
-  'x-cortex-issues'?: {
+  "x-cortex-issues"?: {
     jira?: {
       labels: string[];
     };
   };
-  'x-cortex-sentry'?: {
+  "x-cortex-sentry"?: {
     project: string;
   };
-  'x-cortex-bugsnag'?: {
+  "x-cortex-bugsnag"?: {
     project: string;
   };
-  'x-cortex-static-analysis'?: {
+  "x-cortex-static-analysis"?: {
     sonarqube?: {
       project: string;
     };
   };
-  'x-cortex-snyk'?: {
+  "x-cortex-snyk"?: {
     projects?: {
       organizationId: string;
       projectId: string;
     }[];
   };
-  'x-cortex-alerts'?: {
+  "x-cortex-alerts"?: {
     type: string;
     tag: string;
     value: string;
@@ -191,19 +203,79 @@ export interface Group {
   tag: string;
 }
 
+// Entity Filter
+export enum CategoryFilter {
+  Domain = "Domain",
+  Resource = "Resource",
+  Service = "Service",
+  Team = "Team",
+}
+
+export enum FilterType {
+  CQL_FILTER = "CQL_FILTER",
+  DOMAIN_FILTER = "DOMAIN_FILTER",
+  RESOURCE_FILTER = "RESOURCE_FILTER",
+  SERVICE_FILTER = "SERVICE_FILTER",
+  TEAM_FILTER = "TEAM_FILTER",
+}
+
+export interface EntityGroupFilter {
+  entityGroups: string[];
+  excludedEntityGroups: string[];
+}
+
+export interface ResourcesTypeFilter {
+  include: boolean;
+  types: string[];
+}
+
+export interface CqlFilter {
+  category: CategoryFilter;
+  cqlVersion: string;
+  query: string;
+  type: FilterType.CQL_FILTER;
+}
+
+export interface ServiceFilter {
+  entityGroupFilter?: EntityGroupFilter;
+  type: FilterType.SERVICE_FILTER;
+}
+
+export interface DomainFilter {
+  entityGroupFilter?: EntityGroupFilter;
+  type: FilterType.DOMAIN_FILTER;
+}
+
+export interface ResourceFilter {
+  entityGroupFilter?: EntityGroupFilter;
+  type: FilterType.RESOURCE_FILTER;
+  typeFilter?: ResourcesTypeFilter;
+}
+
+export interface TeamFilter {
+  entityGroupFilter?: EntityGroupFilter;
+  type: FilterType.TEAM_FILTER;
+}
+
+export type ScorecardEntityFilter =
+  | CqlFilter
+  | DomainFilter
+  | ServiceFilter
+  | ResourceFilter
+  | TeamFilter;
+
 export interface Scorecard {
   creator: {
     name: string;
     email: string;
   };
+  description?: string;
+  filter?: ScorecardEntityFilter | null;
   id: number;
   name: string;
-  description?: string;
-  rules: Rule[];
-  tags: Group[];
-  excludedTags: Group[];
-  filterQuery?: string;
   nextUpdated?: string;
+  rules: Rule[];
+  tag: string;
 }
 
 export interface HelpPageLink {
@@ -237,15 +309,15 @@ export interface UiExtensions {
      */
     sortOrder?: {
       compareFn: (a: Scorecard, b: Scorecard) => number;
-    }
+    };
 
     /**
      * Add badges to the list view of Scorecards.
      */
     cardDisplayOptions?: {
       getBadgesFn?: (scorecard: Scorecard) => string[];
-    }
-  }
+    };
+  };
 
   /**
    * Add quick links to an optional help page.

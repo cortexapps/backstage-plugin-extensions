@@ -302,6 +302,46 @@ export interface HelpPageDisplayOptions {
   links?: HelpPageLink[];
 }
 
+export enum ExemptionStatusResponseType {
+  PENDING = "PENDING",
+  APPROVED = "APPROVED",
+  REJECTED = "REJECTED",
+}
+
+export interface PendingExemptionStatus {
+  type: ExemptionStatusResponseType.PENDING;
+}
+
+export interface ApprovedExemptionStatus {
+  type: ExemptionStatusResponseType.APPROVED;
+  approvedBy: string;
+  approvedDate: string;
+}
+
+export interface RejectedExemptionStatus {
+  type: ExemptionStatusResponseType.REJECTED;
+  rejectedBy: string;
+  rejectedDate: string;
+  reason: string;
+}
+
+export type ExemptionStatus =
+  | PendingExemptionStatus
+  | ApprovedExemptionStatus
+  | RejectedExemptionStatus;
+
+export interface RuleExemption {
+  id: number;
+  entityId: number;
+  entityName: string;
+  ruleId: number;
+  requestingReason: string;
+  requestedBy: string;
+  requestedDate: string;
+  endDate: string | null;
+  status: ExemptionStatus;
+}
+
 export interface UiExtensions {
   scorecards?: {
     /**

@@ -19,12 +19,13 @@ export type {
   CustomMapping,
   EntityFilter,
   ExtensionApi,
-  Rule,
-  Scorecard,
   Group,
-  TeamOverrides,
   HelpPageDisplayOptions,
   HelpPageLink,
+  Rule,
+  RuleExemption,
+  Scorecard,
+  TeamOverrides,
   UiExtensions,
-} from './extensionApi';
-export type { EntityFilterGroup } from './filters';
+} from "./extensionApi";
+export type { EntityFilterGroup } from "./filters";

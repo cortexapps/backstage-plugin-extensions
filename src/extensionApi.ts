@@ -229,6 +229,9 @@ export interface ResourcesTypeFilter {
   types: string[];
 }
 
+// NOTE: The interface is the same, only changing name to avoid confusion
+export interface CatalogPageTypeFilter extends ResourcesTypeFilter {}
+
 export interface CqlFilter {
   category: CategoryFilter;
   cqlVersion: string;
@@ -264,13 +267,26 @@ export type ScorecardEntityFilter =
   | ResourceFilter
   | TeamFilter;
 
+
+// TODO(catalog-customization): merge GenericCqlFilter and CqlFilter, when we can fully support the "Generic" category app wide.
+export interface GenericCqlFilter extends Omit<CqlFilter, "category"> {
+  category: 'Generic';
+}
+
+export interface CompoundFilter {
+  cqlFilter?: GenericCqlFilter;
+  entityGroupFilter?: EntityGroupFilter;
+  type: 'COMPOUND_FILTER';
+  typeFilter: CatalogPageTypeFilter | null;
+}
+
 export interface Scorecard {
   creator: {
     name: string;
     email: string;
   };
   description?: string;
-  filter?: ScorecardEntityFilter | null;
+  filter?: ScorecardEntityFilter | CompoundFilter | null;
   id: number;
   name: string;
   nextUpdated?: string;

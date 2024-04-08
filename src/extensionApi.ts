@@ -278,7 +278,7 @@ export interface CompoundFilter {
   cqlFilter?: GenericCqlFilter;
   entityGroupFilter?: EntityGroupFilter;
   type: FilterType.COMPOUND_FILTER;
-  typeFilter?: CatalogPageTypeFilter | null;
+  typeFilter?: CatalogPageTypeFilter;
 }
 
 export interface Scorecard {

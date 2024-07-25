@@ -13,21 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { createExtensionPoint } from '@backstage/backend-plugin-api';
+import { ExtensionApi } from './extensionApi';
 
-export type {
-  CortexYaml,
-  CustomMapping,
-  EntityFilter,
-  ExtensionApi,
-  Group,
-  HelpPageDisplayOptions,
-  HelpPageLink,
-  Rule,
-  RuleExemption,
-  Scorecard,
-  TeamOverrides,
-  UiExtensions,
-} from "./extensionApi";
-export type { EntityFilterGroup } from "./filters";
-export type { CortexExtensionApiExtensionPoint } from "./extensionPoint";
-export { cortexExtensionApiExtensionPoint } from "./extensionPoint";
+export interface CortexExtensionApiExtensionPoint {
+  setExtensionApi(extensionApi: ExtensionApi): void;
+}
+
+export const cortexExtensionApiExtensionPoint =
+  createExtensionPoint<CortexExtensionApiExtensionPoint>({
+    id: 'cortex.extension-api',
+  });

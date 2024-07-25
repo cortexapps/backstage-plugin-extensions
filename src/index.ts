@@ -29,3 +29,4 @@ export type {
   UiExtensions,
 } from "./extensionApi";
 export type { EntityFilterGroup } from "./filters";
+export { CortexExtensionApiExtensionPoint, cortexExtensionApiExtensionPoint } from "./extensionPoint";

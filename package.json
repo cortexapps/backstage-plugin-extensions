@@ -24,6 +24,7 @@
     "clean": "backstage-cli package clean"
   },
   "dependencies": {
+    "@backstage/backend-plugin-api": "^0.7.0",
     "@backstage/catalog-model": "^1.5.0"
   },
   "devDependencies": {

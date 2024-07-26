@@ -1,8 +1,9 @@
 {
   "name": "@cortexapps/backstage-plugin-extensions",
   "main": "src/index.ts",
+  "type": "module",
   "types": "src/index.ts",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Extensions to Cortex Backstage Plugins",
   "repository": "github:cortexapps/backstage-plugin-extensions",
   "license": "Apache-2.0",

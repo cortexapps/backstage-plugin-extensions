@@ -3,7 +3,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Extensions to Cortex Backstage Plugins",
   "repository": "github:cortexapps/backstage-plugin-extensions",
   "license": "Apache-2.0",
@@ -25,11 +25,11 @@
     "clean": "backstage-cli package clean"
   },
   "dependencies": {
-    "@backstage/backend-plugin-api": "^0.7.0",
+    "@backstage/backend-plugin-api": "^0.6.20",
     "@backstage/catalog-model": "^1.5.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.26.6",
+    "@backstage/cli": "^0.26.9",
     "@cortexapps/eslint-config-oss": "^0.0.1"
   },
   "files": [

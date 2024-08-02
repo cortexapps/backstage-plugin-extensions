@@ -22,5 +22,5 @@ export interface CortexExtensionApiExtensionPoint {
 
 export const cortexExtensionApiExtensionPoint =
   createExtensionPoint<CortexExtensionApiExtensionPoint>({
-    id: 'cortex.extension-api',
+    id: 'cortex-backend.extension-api',
   });

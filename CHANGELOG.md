@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.29
+
+- Update `Scorecard` and `Rule` types
+
 ### 0.0.23
 
 - Backstage version update from 1.12.1 to 1.27.7

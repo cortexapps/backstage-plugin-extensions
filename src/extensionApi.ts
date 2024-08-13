@@ -189,6 +189,7 @@ export interface TeamOverrides {
 }
 
 export interface Rule {
+  cqlVersion: string;
   id: number;
   expression: string;
   title?: string;
@@ -281,16 +282,28 @@ export interface CompoundFilter {
   typeFilter?: CatalogPageTypeFilter;
 }
 
+interface ScorecardExemptions {
+  autoApprove: boolean;
+  enabled: boolean;
+}
+
+interface ScorecardNotifications {
+  enabled: boolean;
+}
+
 export interface Scorecard {
   creator: {
     name: string;
     email: string;
   };
   description?: string;
+  exemptions: ScorecardExemptions;
   filter?: ScorecardEntityFilter | CompoundFilter | null;
   id: number;
+  isDraft: boolean;
   name: string;
   nextUpdated?: string;
+  notifications: ScorecardNotifications;
   rules: Rule[];
   tag: string;
 }

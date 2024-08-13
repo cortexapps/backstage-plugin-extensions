@@ -286,9 +286,11 @@ interface ScorecardExemptions {
   autoApprove: boolean;
   enabled: boolean;
 }
+
 interface ScorecardNotifications {
   enabled: boolean;
 }
+
 export interface Scorecard {
   creator: {
     name: string;

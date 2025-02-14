@@ -124,7 +124,9 @@ export type CortexYaml = {
   };
   "x-cortex-issues"?: {
     jira?: {
+      components: string[];
       labels: string[];
+      projects: string[];
     };
   };
   "x-cortex-sentry"?: {

@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.0.30
+
+- Update `CortexYaml` type to include `x-cortex-team` and `x-cortex-slack` fields for Team entity types.
+
 ### 0.0.29
 
 - Update `Scorecard` and `Rule` types

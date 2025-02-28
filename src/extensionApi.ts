@@ -149,6 +149,27 @@ export type CortexYaml = {
     tag: string;
     value: string;
   }[];
+  "x-cortex-slack"?: {
+    channels: {
+      name: string;
+      notificationsEnabled?: boolean;
+      description?: string;
+    }[];
+  };
+  "x-cortex-team"?: {
+    members?: {
+      name: string;
+      email: string;
+      notificationsEnabled?: boolean;
+      roles?: {
+        tag: string;
+      }[];
+    }[];
+    groups?: {
+      name: string;
+      provider: string;
+    }[];
+  };
 };
 
 export type CustomMapping = (entity: Entity) => Partial<CortexYaml>;

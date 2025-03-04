@@ -45,12 +45,13 @@ export type CortexYaml = {
   "x-cortex-service-groups"?: string[];
   "x-cortex-git"?: {
     github?: {
+      alias?: string;
       repository: string;
-      basePath?: string;
+      basepath?: string;
     };
     gitlab?: {
       repository: string;
-      basePath?: string;
+      basepath?: string;
     };
     bitbucket?: {
       repository: string;
@@ -58,7 +59,7 @@ export type CortexYaml = {
     azure?: {
       project: string;
       repository: string;
-      basePath?: string;
+      basepath?: string;
     };
   };
   "x-cortex-oncall"?: {

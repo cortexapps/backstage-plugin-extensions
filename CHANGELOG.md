@@ -3,6 +3,7 @@
 ### 0.0.30
 
 - Update `CortexYaml` type to include `x-cortex-team` and `x-cortex-slack` fields for Team entity types.
+- Fix 'x-cortex-git' structure to use lowercase `basepath` and add `alias` for GitHub.
 
 ### 0.0.29
 
